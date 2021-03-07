@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Cliente } from 'src/cliente';
+import { CriterioRicercaDto } from './criterio-ricerca-dto';
 import { ListePersonaDto } from './liste-persona-dto';
 import { PersonaDto } from './persona-dto';
 
@@ -28,9 +29,19 @@ export class AppComponent {
     this.persona = new Cliente();
   }
 
-
-  ricerca() { }
+  ricerca() {
+    let criterio = new CriterioRicercaDto();
+    criterio.stringa = this.search;
+    let oss = this.http.post<ListePersonaDto>("http://localhost:8080/ricerca-persona", criterio);
+    oss.subscribe(c => this.clienti = c.listaPersone);
+  }
   aggiorna() { }
   modifica() { }
-  cancella() { }
+
+  cancella(a: Cliente) {
+    let dto = new PersonaDto();
+    dto.cliente = a;
+    let os = this.http.post<ListePersonaDto>("http://localhost:8080/cancella-persona", dto);
+    os.subscribe(x => this.clienti = x.listaPersone);
+  }
 }

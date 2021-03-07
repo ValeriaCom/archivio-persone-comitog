@@ -36,13 +36,13 @@ public class ArchivioPersoneController {
     @RequestMapping("/ricerca-persona")
     @ResponseBody
     public ListePersonaDto ricercaPersona(@RequestBody CriterioRicercaDto dto) {
-        throw new UnsupportedOperationException();
+        return archivioPersoneService.ricercaPersona(dto.getStringa());
     }
     
     @RequestMapping("/cancella-persona")
     @ResponseBody
     public ListePersonaDto cancellaPersona(@RequestBody PersonaDto dto) {
-        throw new UnsupportedOperationException();
+       return archivioPersoneService.cancellaPersona(dto.getCliente());
     }
     
     @RequestMapping("/aggiorna-liste")

@@ -37,4 +37,17 @@ public class ArchivioPersoneServiceImpl implements ArchivioPersoneService {
         return new ListePersonaDto(lista);
     }
 
+    @Override
+    public ListePersonaDto ricercaPersona(String criterio) {
+        List<Cliente> lista = clienteRepository
+                .findByCodiceContainsOrRagioneSocialeContainsOrIndirizzoContains(criterio, criterio, criterio);
+        return new ListePersonaDto(lista);
+    }
+
+    @Override
+    public ListePersonaDto cancellaPersona(Cliente cliente) {
+        clienteRepository.delete(cliente);
+        return aggiorna();
+    }
+
 }

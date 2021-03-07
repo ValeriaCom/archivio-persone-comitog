@@ -11,7 +11,7 @@
   <button (click)="ricerca()">Cerca</button>
   <br>
   <br>
-  <table align="center">
+  <table align="center" border="1px">
     <tr>
       <th>Codice</th>
       <th>Ragione Sociale</th>
@@ -23,8 +23,8 @@
       <td>{{c.ragioneSociale}}</td>
       <td>{{c.indirizzo}}</td>
       <td>
-        <button (click)="modifica()">Modifica</button>
-        <button (click)="cancella()">X</button>
+        <button (click)="modifica(a)">Modifica</button>
+        <button (click)="cancella(a)">X</button>
       </td>
     </tr>
   </table>

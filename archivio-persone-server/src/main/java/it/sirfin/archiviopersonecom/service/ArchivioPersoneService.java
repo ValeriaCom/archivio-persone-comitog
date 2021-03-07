@@ -5,6 +5,7 @@
  */
 package it.sirfin.archiviopersonecom.service;
 
+import it.sirfin.archiviopersonecom.dto.CriterioRicercaDto;
 import it.sirfin.archiviopersonecom.dto.ListePersonaDto;
 import it.sirfin.archiviopersonecom.dto.PersonaDto;
 import it.sirfin.archiviopersonecom.model.Cliente;
@@ -19,5 +20,9 @@ public interface ArchivioPersoneService {
     ListePersonaDto inserisciPersona(Cliente cliente);
 
     ListePersonaDto aggiorna();
+
+    public ListePersonaDto ricercaPersona(String criterio);
+    
+    public ListePersonaDto cancellaPersona(Cliente cliente);
 
 }
