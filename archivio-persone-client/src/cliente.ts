@@ -1,5 +1,5 @@
 export class Cliente {
-    codice = 0;
+    codice = "";
     ragioneSociale = "";
     indirizzo = "";
 }
