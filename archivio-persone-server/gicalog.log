@@ -274,3 +274,22 @@ Caused by: java.net.ConnectException: Connection refused: no further information
 	... 52 common frames omitted
 
 2021-03-07 15:57:36.655  WARN 8236 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-07 18:07:47.639 DEBUG 11284 --- [main] org.hibernate.SQL                        : create table cliente (id bigint not null, codice varchar(255), indirizzo varchar(255), ragione_sociale varchar(255), primary key (id)) engine=InnoDB
+2021-03-07 18:07:47.730 DEBUG 11284 --- [main] org.hibernate.SQL                        : create table hibernate_sequence (next_val bigint) engine=InnoDB
+2021-03-07 18:07:47.764 DEBUG 11284 --- [main] org.hibernate.SQL                        : insert into hibernate_sequence values ( 1 )
+2021-03-07 18:07:48.490  WARN 11284 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-03-07 18:07:49.279  WARN 11284 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
+2021-03-07 18:07:49.352 ERROR 11284 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+

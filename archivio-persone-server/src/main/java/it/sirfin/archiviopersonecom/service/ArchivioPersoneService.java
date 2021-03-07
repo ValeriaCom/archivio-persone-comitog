@@ -5,10 +5,19 @@
  */
 package it.sirfin.archiviopersonecom.service;
 
+import it.sirfin.archiviopersonecom.dto.ListePersonaDto;
+import it.sirfin.archiviopersonecom.dto.PersonaDto;
+import it.sirfin.archiviopersonecom.model.Cliente;
+import org.springframework.web.bind.annotation.RequestBody;
+
 /**
  *
  * @author 39392
  */
 public interface ArchivioPersoneService {
-    
+
+    ListePersonaDto inserisciPersona(Cliente cliente);
+
+    ListePersonaDto aggiorna();
+
 }

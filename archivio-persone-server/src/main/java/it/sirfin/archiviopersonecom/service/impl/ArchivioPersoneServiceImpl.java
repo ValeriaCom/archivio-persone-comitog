@@ -5,7 +5,12 @@
  */
 package it.sirfin.archiviopersonecom.service.impl;
 
+import it.sirfin.archiviopersonecom.dto.ListePersonaDto;
+import it.sirfin.archiviopersonecom.model.Cliente;
+import it.sirfin.archiviopersonecom.repository.ClienteRepository;
 import it.sirfin.archiviopersonecom.service.ArchivioPersoneService;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,5 +19,22 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class ArchivioPersoneServiceImpl implements ArchivioPersoneService {
+
+    @Autowired
+    ClienteRepository clienteRepository;
+
+    @Override
+    public ListePersonaDto inserisciPersona(Cliente cliente) {
+        //inserire la persone
+        clienteRepository.save(cliente);
+        //rileggere ildb aggiornato e ritornarlo
+        return aggiorna();
+    }
+
+    @Override
+    public ListePersonaDto aggiorna() {
+        List<Cliente> lista = clienteRepository.findAll();
+        return new ListePersonaDto(lista);
+    }
 
 }
