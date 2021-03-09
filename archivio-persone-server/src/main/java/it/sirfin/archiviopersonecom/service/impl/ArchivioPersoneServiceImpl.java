@@ -5,8 +5,8 @@
  */
 package it.sirfin.archiviopersonecom.service.impl;
 
-import it.sirfin.archiviopersonecom.dto.ListePersonaDto;
-import it.sirfin.archiviopersonecom.model.Cliente;
+import it.sirfin.archiviopersonecom.dto.ListaPersoneDto;
+import it.sirfin.archiviopersonecom.model.Persona;
 import it.sirfin.archiviopersonecom.repository.ClienteRepository;
 import it.sirfin.archiviopersonecom.service.ArchivioPersoneService;
 import java.util.List;
@@ -24,7 +24,7 @@ public class ArchivioPersoneServiceImpl implements ArchivioPersoneService {
     ClienteRepository clienteRepository;
 
     @Override
-    public ListePersonaDto inserisciPersona(Cliente cliente) {
+    public ListaPersoneDto inserisciPersona(Persona cliente) {
         //inserire la persone
         clienteRepository.save(cliente);
         //rileggere ildb aggiornato e ritornarlo
@@ -32,22 +32,21 @@ public class ArchivioPersoneServiceImpl implements ArchivioPersoneService {
     }
 
     @Override
-    public ListePersonaDto aggiorna() {
-        List<Cliente> lista = clienteRepository.findAll();
-        return new ListePersonaDto(lista);
-    }
-
-    @Override
-    public ListePersonaDto ricercaPersona(String criterio) {
-        List<Cliente> lista = clienteRepository
+    public ListaPersoneDto ricercaPersona(String criterio) {
+        List<Persona> lista = clienteRepository
                 .findByCodiceContainsOrRagioneSocialeContainsOrIndirizzoContains(criterio, criterio, criterio);
-        return new ListePersonaDto(lista);
+        return new ListaPersoneDto(lista);
     }
 
     @Override
-    public ListePersonaDto cancellaPersona(Cliente cliente) {
+    public ListaPersoneDto cancellaPersona(Persona cliente) {
         clienteRepository.delete(cliente);
         return aggiorna();
     }
 
+    @Override
+    public ListaPersoneDto aggiorna() {
+        List<Persona> lista = clienteRepository.findAll();
+        return new ListaPersoneDto(lista);
+    }
 }

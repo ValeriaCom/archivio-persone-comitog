@@ -1,5 +1,5 @@
-import { Cliente } from "src/cliente";
+import { Persona } from "src/cliente";
 
 export class PersonaDto{
-    cliente = new Cliente();
+    persona = new Persona();
 }

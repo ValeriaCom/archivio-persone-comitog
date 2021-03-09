@@ -1,10 +1,18 @@
 <body align="center">
   <h3>ARCHIVIO CLIENTI</h3>
+  <div>
   <input type="text" [(ngModel)]="persona.codice" placeholder="codice"> &nbsp;
   <input type="text" [(ngModel)]="persona.ragioneSociale" placeholder="ragione sociale">&nbsp;
   <input type="text" [(ngModel)]="persona.indirizzo" placeholder="indirizzo">&nbsp;
   &nbsp;
-  <button (click)="aggiungi()">Aggiungi</button>
+  <button *ngIf="showAggiungi" (click)="aggiungi()">Aggiungi</button>
+</div>
+<div>
+  <br>
+  <br>
+<button *ngIf="showConferma" (click)="conferma()">Conferma</button>&nbsp;
+<button *ngIf="showAnnulla" (click)="annulla()">Annulla</button>
+</div>
   <br>
   <br>
   <input type="text" [(ngModel)]="search" placeholder="ricerca">&nbsp;
@@ -18,13 +26,13 @@
       <th>Indirizzo</th>
       <th>Gestisci</th>
     </tr>
-    <tr *ngFor="let c of clienti">
-      <td>{{c.codice}}</td>
-      <td>{{c.ragioneSociale}}</td>
-      <td>{{c.indirizzo}}</td>
+    <tr *ngFor="let p of persone, index as i">
+      <td>{{p.codice}}</td>
+      <td>{{p.ragioneSociale}}</td>
+      <td>{{p.indirizzo}}</td>
       <td>
-        <button (click)="modifica(a)">Modifica</button>
-        <button (click)="cancella(a)">X</button>
+        <button (click)="modifica(i)">Modifica</button>
+        <button (click)="cancella(p)">X</button>
       </td>
     </tr>
   </table>

@@ -6,9 +6,9 @@
 package it.sirfin.archiviopersonecom.service;
 
 import it.sirfin.archiviopersonecom.dto.CriterioRicercaDto;
-import it.sirfin.archiviopersonecom.dto.ListePersonaDto;
+import it.sirfin.archiviopersonecom.dto.ListaPersoneDto;
 import it.sirfin.archiviopersonecom.dto.PersonaDto;
-import it.sirfin.archiviopersonecom.model.Cliente;
+import it.sirfin.archiviopersonecom.model.Persona;
 import org.springframework.web.bind.annotation.RequestBody;
 
 /**
@@ -17,12 +17,12 @@ import org.springframework.web.bind.annotation.RequestBody;
  */
 public interface ArchivioPersoneService {
 
-    ListePersonaDto inserisciPersona(Cliente cliente);
+    ListaPersoneDto inserisciPersona(Persona cliente);
 
-    ListePersonaDto aggiorna();
+    ListaPersoneDto aggiorna();
 
-    public ListePersonaDto ricercaPersona(String criterio);
+    public ListaPersoneDto ricercaPersona(String criterio);
     
-    public ListePersonaDto cancellaPersona(Cliente cliente);
+    public ListaPersoneDto cancellaPersona(Persona cliente);
 
 }

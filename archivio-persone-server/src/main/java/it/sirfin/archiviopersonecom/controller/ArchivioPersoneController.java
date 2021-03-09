@@ -6,7 +6,7 @@
 package it.sirfin.archiviopersonecom.controller;
 
 import it.sirfin.archiviopersonecom.dto.CriterioRicercaDto;
-import it.sirfin.archiviopersonecom.dto.ListePersonaDto;
+import it.sirfin.archiviopersonecom.dto.ListaPersoneDto;
 import it.sirfin.archiviopersonecom.dto.PersonaDto;
 import it.sirfin.archiviopersonecom.service.ArchivioPersoneService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,31 +23,31 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 @RestController
 public class ArchivioPersoneController {
-    
+
     @Autowired
     ArchivioPersoneService archivioPersoneService;
-    
+
     @RequestMapping("/inserisci-persona")
     @ResponseBody
-    public ListePersonaDto inserisciPersona(@RequestBody PersonaDto dto) {
-        return archivioPersoneService.inserisciPersona(dto.getCliente());
+    public ListaPersoneDto inserisciPersona(@RequestBody PersonaDto dto) {
+        return archivioPersoneService.inserisciPersona(dto.getPersona());
     }
-    
+
     @RequestMapping("/ricerca-persona")
     @ResponseBody
-    public ListePersonaDto ricercaPersona(@RequestBody CriterioRicercaDto dto) {
+    public ListaPersoneDto ricercaPersona(@RequestBody CriterioRicercaDto dto) {
         return archivioPersoneService.ricercaPersona(dto.getStringa());
     }
-    
+
     @RequestMapping("/cancella-persona")
     @ResponseBody
-    public ListePersonaDto cancellaPersona(@RequestBody PersonaDto dto) {
-       return archivioPersoneService.cancellaPersona(dto.getCliente());
+    public ListaPersoneDto cancellaPersona(@RequestBody PersonaDto dto) {
+        return archivioPersoneService.cancellaPersona(dto.getPersona());
     }
-    
-    @RequestMapping("/aggiorna-liste")
+
+    @RequestMapping("/aggiorna")
     @ResponseBody
-    public ListePersonaDto aggiornaListe() {
-        throw new UnsupportedOperationException();
+    public ListaPersoneDto aggiorna() {
+        return archivioPersoneService.aggiorna();
     }
 }

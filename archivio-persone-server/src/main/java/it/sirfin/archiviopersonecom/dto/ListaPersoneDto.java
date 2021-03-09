@@ -5,35 +5,37 @@
  */
 package it.sirfin.archiviopersonecom.dto;
 
-import it.sirfin.archiviopersonecom.model.Cliente;
+import it.sirfin.archiviopersonecom.model.Persona;
 import java.util.List;
 
 /**
  *
  * @author 39392
  */
-public class ListePersonaDto {
+public class ListaPersoneDto {
 
-    private List<Cliente> listaPersone;
+    private List<Persona> listaPersone;
 
-    public ListePersonaDto() {
+    public ListaPersoneDto() {
     }
 
-    public ListePersonaDto(List<Cliente> listaPersone) {
+    public ListaPersoneDto(List<Persona> listaPersone) {
         this.listaPersone = listaPersone;
     }
 
-    public List<Cliente> getListaPersone() {
+    public List<Persona> getListaPersone() {
         return listaPersone;
     }
 
-    public void setListaPersone(List<Cliente> listaPersone) {
+    public void setListaPersone(List<Persona> listaPersone) {
         this.listaPersone = listaPersone;
     }
 
     @Override
     public String toString() {
-        return "ListePersonaDto{" + "listaPersone=" + listaPersone + '}';
+        return "ListaPersoneDto{" + "listaPersone=" + listaPersone + '}';
     }
+
+    
 
 }

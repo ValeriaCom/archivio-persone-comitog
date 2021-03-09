@@ -5,7 +5,7 @@
  */
 package it.sirfin.archiviopersonecom.repository;
 
-import it.sirfin.archiviopersonecom.model.Cliente;
+import it.sirfin.archiviopersonecom.model.Persona;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  * @author 39392
  */
 @Repository
-public interface ClienteRepository extends JpaRepository<Cliente, Long> {
+public interface ClienteRepository extends JpaRepository<Persona, Long> {
 
-    List<Cliente> findByCodiceContainsOrRagioneSocialeContainsOrIndirizzoContains(String c, String r, String i);
+    List<Persona> findByCodiceContainsOrRagioneSocialeContainsOrIndirizzoContains(String c, String r, String i);
 }

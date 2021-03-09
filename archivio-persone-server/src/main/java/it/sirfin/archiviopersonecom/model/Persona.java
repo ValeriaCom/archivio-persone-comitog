@@ -16,7 +16,7 @@ import javax.persistence.Id;
  * @author 39392
  */
 @Entity
-public class Cliente implements Serializable {
+public class Persona implements Serializable {
 
     @Id
     @GeneratedValue
@@ -28,10 +28,10 @@ public class Cliente implements Serializable {
     @Column
     private String indirizzo;
 
-    public Cliente() {
+    public Persona() {
     }
 
-    public Cliente(String codice, String ragioneSociale, String indirizzo) {
+    public Persona(String codice, String ragioneSociale, String indirizzo) {
         this.codice = codice;
         this.ragioneSociale = ragioneSociale;
         this.indirizzo = indirizzo;

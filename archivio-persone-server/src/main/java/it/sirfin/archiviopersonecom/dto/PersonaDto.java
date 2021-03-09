@@ -5,7 +5,7 @@
  */
 package it.sirfin.archiviopersonecom.dto;
 
-import it.sirfin.archiviopersonecom.model.Cliente;
+import it.sirfin.archiviopersonecom.model.Persona;
 
 /**
  *
@@ -13,26 +13,26 @@ import it.sirfin.archiviopersonecom.model.Cliente;
  */
 public class PersonaDto {
 
-    private Cliente cliente;
+    private Persona persona;
 
     public PersonaDto() {
     }
 
-    public PersonaDto(Cliente cliente) {
-        this.cliente = cliente;
+    public PersonaDto(Persona persona) {
+        this.persona = persona;
     }
 
-    public Cliente getCliente() {
-        return cliente;
+    public Persona getPersona() {
+        return persona;
     }
 
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setPersona(Persona persona) {
+        this.persona = persona;
     }
 
     @Override
     public String toString() {
-        return "PersonaDto{" + "cliente=" + cliente + '}';
+        return "PersonaDto{" + "persona=" + persona + '}';
     }
 
 }
